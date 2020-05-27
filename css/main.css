@@ -137,9 +137,14 @@ a[data-toggle=collapse] {
 .dropdown-toggle::after {
   display: block;
   position: absolute;
-  top: 50%;
-  right: 10px;
+  bottom: 5px;
+  right: 5px;
   transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.dropdown-toggle {
+  white-space: normal !important;
 }
 
 ul a {
