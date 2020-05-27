@@ -72,15 +72,15 @@ a:focus {
 }
 
 #sidebar {
-  min-width: 180px;
-  max-width: 180px;
+  min-width: 210px;
+  max-width: 210px;
   color: #4b4b4b;
   transition: all 0.3s;
 }
 
 #sidebar.active {
-  margin-left: -180px;
-  min-width: 180px;
+  margin-left: -210px;
+  min-width: 210px;
 }
 
 #sidebar ul.components {
@@ -162,7 +162,7 @@ ul ul ul a {
 }
 
 .navbar-logo-div {
-  width: 180px;
+  width: 210px;
   height: 50px;
   background-color: #ffdf00;
   margin-right: 15px;
@@ -232,8 +232,8 @@ ul ul ul a {
 }
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -180px;
-    min-width: 180px;
+    margin-left: -210px;
+    min-width: 210px;
   }
 
   #sidebar.active {
@@ -259,8 +259,8 @@ ul ul ul a {
   }
 }
 #sidebar:hover {
-  max-width: 180px;
-  min-width: 180px;
+  max-width: 210px;
+  min-width: 210px;
 }
 #sidebar:hover .menu-item-text {
   margin-left: 0;
