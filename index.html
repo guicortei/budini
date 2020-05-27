@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Dashboard</title>
+
+  <!-- Bootstrap 4.5 CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Font Awesome 5.13.0 CSS -->
+  <link rel="stylesheet" href="css/all.css">
+
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light navbar-custom">
+        <div class="container-fluid px-0">
+
+            <div class="navbar-logo-div">
+                <img src="img/logo2.png" class="navbar-logo-img">
+            </div>
+
+            <button type="button" id="sidebarCollapse" class="btn text-sidebar bg-main-color">
+                <i class="fas fa-align-left"></i>
+                <span></span>
+            </button>
+
+            <div class="navbar-title ellipsis sm-hide">
+              <span>Loves Truck Tire Care</span>
+            </div>
+
+            <div class="dropdown user-btn d-inline-block ml-auto">
+              <button class="btn bg-main-color font-weight-light d-inline-block ml-auto" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="txt-main-color-secondary">
+                  <span class="sm-hide">LP.DESENV3</span>
+                  <i class="fas fa-user-circle"></i>
+                </span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right text-right mt-2 shadow">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Preferences</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item light-bold" href="#">Exit</a>
+              </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="main-content" class="wrapper bg-main-color">
+
+        <!-- Sidebar  -->
+        <div id="sidebar">
+          <div class="sidebar__inner">
+
+              <ul class="list-unstyled components">
+                  <li class="active">
+                      <a href="#"><i class="fas fa-tachometer-alt"></i><span class="menu-item-text">Dashboard</span></a>
+                  </li>
+                  <li>
+                      <a href="#reportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-copy"></i><span class="menu-item-text">Reports</span></a>
+                      <ul class="collapse list-unstyled" id="reportsSubmenu">
+                          <li>
+                              <a href="#"><i class="far fa-circle"></i>Inspection Images</a>
+                          </li>
+                          <li>
+                              <a href="#vehicleReportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-dot-circle"></i>Vehicle Reports</a>
+                              <ul class="collapse list-unstyled" id="vehicleReportsSubmenu">
+                                  <li>
+                                      <a href="#"><i class="far fa-circle"></i>Missed Vehicles</a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><i class="far fa-circle"></i>Vehicle Inspection</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="#"><i class="far fa-circle"></i>Priority Items</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#symmaryReportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-copy"></i><span class="menu-item-text">Summary Reports</span></a>
+                      <ul class="collapse list-unstyled" id="symmaryReportsSubmenu">
+                          <li>
+                              <a href="#"><i class="far fa-circle"></i>Vehicle Inspection</a>
+                          </li>
+                          <li>
+                              <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Vehicle Inspection Count</span></a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
+                  </li>
+
+              </ul>
+
+          </div>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content" class="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-title">
+                <div class="container-fluid">
+
+                    <div>
+                      <span class="dashboardTitle light-bold">Dashboard - Fleet inspection analysis</span>
+                    </div>
+
+                    <div>
+                      <span class="lastUpdate">Last update: 2020-05-21 03:54:03 (USA/Los Angeles)</span>
+                    </div>
+
+                </div>
+            </nav>
+
+
+            <div class="row mx-1">
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                        <label class="label-filter">Inspection Date</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">
+                              <i class="far fa-calendar-alt"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                        <label class="label-filter">&nbsp</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">
+                              <i class="far fa-calendar-alt"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <label class="label-filter">Company</label>
+                            <select class="form-control"></select>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <label class="label-filter">Fleet</label>
+                            <select class="form-control"></select>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <label class="label-filter">Branch</label>
+                            <select class="form-control"></select>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <label class="label-filter">Store</label>
+                            <select class="form-control"></select>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <label class="label-filter">Vehicle Class</label>
+                            <select class="form-control"></select>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <label class="label-filter">&nbsp</label>
+                        <div class="text-nowrap">
+                          <button type="button" class="btn text-sidebar bg-main-color" >
+                              <i class="fas fa-print"></i>
+                              <span></span>
+                          </button>
+                          <button type="button" class="btn text-sidebar bg-main-color" >
+                              <i class="fas fa-sync-alt"></i>
+                              <span></span>
+                          </button>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="row mx-0">
+
+                <div class="col-lg-6 col-sm-12">
+                  <div class="card mb-2 card-custom card-A">
+                    Red Flag / Action Needed
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 ">
+                  <div class="card mb-2 card-custom card-B">
+                    Air Pressure %
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="row mx-0">
+              <div class="col-12">
+                <div class="card mb-2 scrollx card-custom card-C">
+                  Inspection History - Daily Count
+                </div>
+              </div>
+            </div>
+
+            <div class="row mx-0">
+              <div class="col-12">
+                <div class="card mb-2 scrollx card-custom card-D">
+                  Table
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-custom mx-0">
+      <div class="row h-100 font-weight-light mx-0">
+        <div class="col-6 text-left ellipsis mx-0">
+          <span>Budini Tire Survey System</span>
+        </div>
+        <div class="col-6 text-right ellipsis-reversed mx-0">
+          <span class="align-middle">SURVEY WEB USA - LOVES [HB00000001] 5.1.16</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery 3.5.1 JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap 4.5 JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Sticky Sidebar JS -->
+    <script type="text/javascript" src="js/sticky-sidebar.js"></script>
+
+    <script type="text/javascript">
+
+        var sidebar = new StickySidebar('#sidebar', {
+            containerSelector: '#main-content',
+            innerWrapperSelector: '.sidebar__inner',
+            topSpacing: 50,
+            bottomSpacing: 0
+        });
+
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                sidebar.updateSticky();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
