@@ -3,12 +3,12 @@
 ----------------------------------------------------- */
 
 // YELLOW
-// $main-color: #ffdf00;
-// $main-color-secondary: #4b4b4b;
+$main-color: #ffdf00;
+$main-color-secondary: #4b4b4b;
 
 // BLUE
-$main-color: #58caf6;
-$main-color-secondary: #4b4b4b;
+// $main-color: #58caf6;
+// $main-color-secondary: #4b4b4b;
 
 // GRAY
 // $main-color: #555;
@@ -28,6 +28,8 @@ $contentPadding: 10px;
 $navbar-height: 50px;
 $footer-height: 25px;
 $sidebar-width: 180px; //210
+$sidebar-icon-only-width: 50px;
+;
 
 .bg-main-color {
   background-color: $main-color;
@@ -154,6 +156,7 @@ a:focus {
     margin-right: 10px;
     display: inline;
   }
+  transition: all 0s;
 }
 .fas { display:inline; }
 
@@ -165,7 +168,7 @@ a[data-toggle="collapse"] {
     display: block;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 10px;
     transform: translateY(-50%);
 }
 
@@ -271,9 +274,13 @@ ul ul ul a {
     }
     #sidebar {
       overflow: hidden;
-      max-width: 50px;
-      min-width: 50px;
+      max-width: $sidebar-icon-only-width;
+      min-width: $sidebar-icon-only-width;
     }
+    /*.navbar-logo-div {
+      max-width: $sidebar-icon-only-width;
+      overflow: hidden;
+    }*/
 }
 
 @media (max-width: 768px) {
@@ -312,7 +319,7 @@ ul ul ul a {
 .navbar-custom {
   margin: 0;
   padding: 0;
-  height: $navbar-height;
+  min-height: $navbar-height;
 }
 
 .navbar-title {
@@ -396,4 +403,15 @@ ul ul ul a {
 
 .form-group {
   margin-bottom: 6px;
+}
+
+/* --- sticky sidebar */
+.sidebar{
+    will-change: min-height;
+}
+
+.sidebar__inner{
+    transform: translate(0, 0); /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
 }

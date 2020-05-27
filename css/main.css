@@ -6,7 +6,7 @@
 ----------------------------------------------------- */
 @import "poppins.css";
 .bg-main-color {
-  background-color: #58caf6;
+  background-color: #ffdf00;
 }
 
 .txt-main-color-secondary {
@@ -100,13 +100,13 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-  color: #58caf6;
+  color: #ffdf00;
   background: #4b4b4b;
   opacity: 1 !important;
 }
 
 #sidebar ul li.active > a {
-  color: #58caf6;
+  color: #ffdf00;
   background: #4b4b4b;
   opacity: 0.8;
 }
@@ -117,6 +117,9 @@ a:focus {
   margin-bottom: -1px;
 }
 
+#sidebar {
+  transition: all 0s;
+}
 #sidebar i {
   margin-left: 6px;
   margin-right: 10px;
@@ -135,7 +138,7 @@ a[data-toggle=collapse] {
   display: block;
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 10px;
   transform: translateY(-50%);
 }
 
@@ -161,7 +164,7 @@ ul ul ul a {
 .navbar-logo-div {
   width: 180px;
   height: 50px;
-  background-color: #58caf6;
+  background-color: #ffdf00;
   margin-right: 15px;
   text-align: center;
 }
@@ -218,6 +221,11 @@ ul ul ul a {
     max-width: 50px;
     min-width: 50px;
   }
+
+  /*.navbar-logo-div {
+    max-width: $sidebar-icon-only-width;
+    overflow: hidden;
+  }*/
 }
 @media (max-width: 768px) {
   #sidebar {
@@ -256,7 +264,7 @@ ul ul ul a {
 .navbar-custom {
   margin: 0;
   padding: 0;
-  height: 50px;
+  min-height: 50px;
 }
 
 .navbar-title {
@@ -333,6 +341,18 @@ ul ul ul a {
 
 .form-group {
   margin-bottom: 6px;
+}
+
+/* --- sticky sidebar */
+.sidebar {
+  will-change: min-height;
+}
+
+.sidebar__inner {
+  transform: translate(0, 0);
+  /* For browsers don't support translate3d. */
+  transform: translate3d(0, 0, 0);
+  will-change: position, transform;
 }
 
 /*# sourceMappingURL=main.css.map */

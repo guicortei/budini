@@ -23,7 +23,7 @@
         <div class="container-fluid px-0">
 
             <div class="navbar-logo-div">
-                <img src="img/logo2.png" class="navbar-logo-img">
+                <img src="img/logo.gif" class="navbar-logo-img">
             </div>
 
             <button type="button" id="sidebarCollapse" class="btn text-sidebar bg-main-color">
@@ -31,14 +31,14 @@
                 <span></span>
             </button>
 
-            <div class="navbar-title ellipsis sm-hide">
+            <div class="navbar-title ellipsis">
               <span>Loves Truck Tire Care</span>
             </div>
 
             <div class="dropdown user-btn d-inline-block ml-auto">
               <button class="btn bg-main-color font-weight-light d-inline-block ml-auto" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="txt-main-color-secondary">
-                  <span class="sm-hide">LP.DESENV3</span>
+                  <span >LP.DESENV3</span>
                   <i class="fas fa-user-circle"></i>
                 </span>
               </button>
@@ -56,7 +56,7 @@
     <div id="main-content" class="wrapper bg-main-color">
 
         <!-- Sidebar  -->
-        <div id="sidebar">
+        <div id="sidebar" class="sidebar">
           <div class="sidebar__inner">
 
               <ul class="list-unstyled components">
@@ -64,32 +64,32 @@
                       <a href="#"><i class="fas fa-tachometer-alt"></i><span class="menu-item-text">Dashboard</span></a>
                   </li>
                   <li>
-                      <a href="#reportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-copy"></i><span class="menu-item-text">Reports</span></a>
+                      <a href="#reportsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-copy"></i><span class="menu-item-text">Reports</span></a>
                       <ul class="collapse list-unstyled" id="reportsSubmenu">
                           <li>
-                              <a href="#"><i class="far fa-circle"></i>Inspection Images</a>
+                              <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Inspection Images</span></a>
                           </li>
                           <li>
-                              <a href="#vehicleReportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-dot-circle"></i>Vehicle Reports</a>
+                              <a href="#vehicleReportsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-dot-circle"></i><span class="menu-item-text">Vehicle Reports</span></a>
                               <ul class="collapse list-unstyled" id="vehicleReportsSubmenu">
                                   <li>
-                                      <a href="#"><i class="far fa-circle"></i>Missed Vehicles</a>
+                                      <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Missed Vehicles</span></a>
                                   </li>
                                   <li>
-                                      <a href="#"><i class="far fa-circle"></i>Vehicle Inspection</a>
+                                      <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Vehicle Inspection</span></a>
                                   </li>
                               </ul>
                           </li>
                           <li>
-                              <a href="#"><i class="far fa-circle"></i>Priority Items</a>
+                              <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Priority Items</span></a>
                           </li>
                       </ul>
                   </li>
-                  <li>
-                      <a href="#symmaryReportsSubmenu" data-toggle="collapse" aria-expanded="false" class=""><i class="fas fa-copy"></i><span class="menu-item-text">Summary Reports</span></a>
+                  <li class="">
+                      <a href="#symmaryReportsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-copy"></i><span class="menu-item-text">Summary Reports</span></a>
                       <ul class="collapse list-unstyled" id="symmaryReportsSubmenu">
                           <li>
-                              <a href="#"><i class="far fa-circle"></i>Vehicle Inspection</a>
+                              <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Vehicle Inspection</span></a>
                           </li>
                           <li>
                               <a href="#"><i class="far fa-circle"></i><span class="menu-item-text">Vehicle Inspection Count</span></a>
@@ -290,15 +290,19 @@
             containerSelector: '#main-content',
             innerWrapperSelector: '.sidebar__inner',
             topSpacing: 50,
-            bottomSpacing: 0
+            bottomSpacing: 40
         });
 
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
-                sidebar.updateSticky();
+                setTimeout(sidebar.updateSticky(), 500);
             });
+            $('#sidebar').on('mouseover', function() {
+              sidebar.updateSticky();
+            })
         });
+
     </script>
 
 </body>
