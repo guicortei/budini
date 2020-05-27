@@ -179,6 +179,10 @@ ul ul ul a {
   display: inline;
 }
 
+.sm-hide-reverse {
+  display: none;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -206,10 +210,6 @@ ul ul ul a {
 }
 
 @media (max-width: 1000px) {
-  .sm-hide {
-    display: none;
-  }
-
   .menu-item-text {
     margin-left: -500px;
     opacity: 0;
@@ -249,6 +249,14 @@ ul ul ul a {
     opacity: 1;
     transition: margin-left 0s, opacity 0.7s;
   }
+
+  .sm-hide {
+    display: none !important;
+  }
+
+  .sm-hide-reverse {
+    display: block !important;
+  }
 }
 #sidebar:hover {
   max-width: 180px;
@@ -267,6 +275,18 @@ ul ul ul a {
 /* ---------------------------------------------------
     OTHER CLASSES
 ----------------------------------------------------- */
+.user-dropdown-menu-header {
+  padding: 7px 14px;
+  background-color: #EEE;
+  text-align: center;
+  border-bottom: solid 1px #DDD;
+}
+
+.user-dropdown-menu {
+  padding-top: 0;
+  overflow-y: hidden;
+}
+
 .navbar-custom {
   margin: 0;
   padding: 0;
