@@ -315,7 +315,7 @@ ul ul ul a {
   max-width: $sidebar-width;
   min-width: $sidebar-width;
   a {
-    pointer-events: auto !important;
+    pointer-events: auto;
   }
 }
 

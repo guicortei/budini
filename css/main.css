@@ -261,7 +261,7 @@ ul ul ul a {
   transition-delay: 0.2s;
 }
 #sidebar:hover a {
-  pointer-events: auto !important;
+  pointer-events: auto;
 }
 
 /* ---------------------------------------------------
