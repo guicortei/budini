@@ -221,6 +221,9 @@ ul ul ul a {
     max-width: 50px;
     min-width: 50px;
   }
+  #sidebar a {
+    pointer-events: none;
+  }
 
   /*.navbar-logo-div {
     max-width: $sidebar-icon-only-width;
@@ -256,6 +259,9 @@ ul ul ul a {
   opacity: 1;
   transition: margin-left 0s, opacity 0.7s;
   transition-delay: 0.2s;
+}
+#sidebar:hover a {
+  pointer-events: auto !important;
 }
 
 /* ---------------------------------------------------

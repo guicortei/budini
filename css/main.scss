@@ -276,11 +276,15 @@ ul ul ul a {
       overflow: hidden;
       max-width: $sidebar-icon-only-width;
       min-width: $sidebar-icon-only-width;
+      a {
+        pointer-events: none;
+      }
     }
     /*.navbar-logo-div {
       max-width: $sidebar-icon-only-width;
       overflow: hidden;
     }*/
+
 }
 
 @media (max-width: 768px) {
@@ -310,6 +314,9 @@ ul ul ul a {
   }
   max-width: $sidebar-width;
   min-width: $sidebar-width;
+  a {
+    pointer-events: auto !important;
+  }
 }
 
 /* ---------------------------------------------------
