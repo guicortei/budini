@@ -20,31 +20,36 @@
 <body>
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light navbar-custom">
-        <div class="container-fluid px-0">
+        <div class="grid-custom">
 
             <div class="navbar-logo-div">
-                <img src="img/logo.gif" class="navbar-logo-img">
+                <img src="img/loves/logo_large.png" class="navbar-logo-img sm-hide">
+                <img src="img/loves/logo_small.png" class="navbar-logo-img sm-unhide">
             </div>
 
-            <button type="button" id="sidebarCollapse" class="btn text-sidebar bg-main-color">
-                <i class="fas fa-align-left"></i>
+
+
+            <div class="centralize-content">
+              <button type="button" id="sidebarCollapse" class="btn text-sidebar bg-main-color" style="float: left;">
+                <i class="fas fa-bars"></i>
                 <span></span>
-            </button>
-
-            <div class="navbar-title ellipsis sm-hide">
-              <span class="ellipsis">Loves Truck Tire Care</span>
+              </button>
             </div>
 
-            <div class="dropdown user-btn d-inline-block ml-auto">
+            <div class="vertical-centralize-content text-left ellipsis">
+              <span>Loves Truck Tire Care</span>
+            </div>
+
+
+
+            <div class="dropdown user-btn d-inline-block ml-auto centralize-content">
               <button class="btn bg-main-color font-weight-light d-inline-block ml-auto" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="txt-main-color-secondary">
-                  <span class="sm-hide">LP.DESENV3</span>
-                  <i class="fas fa-user-circle"></i>
+                  <span class="sm-hide mr-2">LP.DESENV3</span><i class="fas fa-user-circle"></i>
                 </span>
               </button>
               <div class="dropdown-menu dropdown-menu-right text-right mt-2 shadow user-dropdown-menu">
-                <div class="sm-hide-reverse user-dropdown-menu-header">
-                  <span class="ellipsis light-bold">Loves Truck Tire Care</span>
+                <div class="sm-unhide user-dropdown-menu-header">
                   <span class="font-weight-light">LP.DESENV3</span>
                 </div>
                 <a class="dropdown-item" href="#">Profile</a>
@@ -63,8 +68,13 @@
         <div id="sidebar" class="sidebar">
           <div class="sidebar__inner">
 
+
+
               <ul class="list-unstyled components">
-                  <li class="active">
+                  <li class="close-menu">
+                    <i class="fas fa-times-circle"></i>
+                  </li>
+                  <li class="">
                       <a href="#"><i class="fas fa-tachometer-alt"></i><span class="menu-item-text">Dashboard</span></a>
                   </li>
                   <li>
@@ -131,7 +141,7 @@
                           </li>
                       </ul>
                   </li>
-                  <li>
+                  <li class="active">
                       <a href="#"><i class="fas fa-at"></i><span class="menu-item-text">Contact</span></a>
                   </li>
                   <li>
@@ -320,7 +330,7 @@
         });
 
         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
+            $('#sidebarCollapse, .close-menu').on('click', function () {
                 $('#sidebar').toggleClass('active');
                 setTimeout(sidebar.updateSticky(), 500);
             });
