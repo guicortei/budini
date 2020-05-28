@@ -75,10 +75,10 @@ a:focus {
   min-width: 210px;
   max-width: 210px;
   color: #4b4b4b;
-  transition: all 0.3s;
+  transition: 0s;
 }
 
-#sidebar.active {
+#sidebar.sidebar-hidden {
   margin-left: -210px;
   min-width: 210px;
 }
@@ -196,11 +196,13 @@ ul ul ul a {
   padding-right: 10px;
   padding-bottom: 35px;
   padding-top: 10px;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
   transition: all 0.3s;
   position: relative;
   /*for footer-custom*/
   background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---------------------------------------------------
@@ -220,7 +222,6 @@ ul ul ul a {
 }
 
 #sidebar {
-  overflow: hidden;
   max-width: 50px;
   min-width: 50px;
 }
@@ -233,25 +234,6 @@ ul ul ul a {
   overflow: hidden;
 }*/
 @media (max-width: 768px) {
-  #sidebar {
-    margin-left: -210px;
-    min-width: 210px;
-  }
-
-  #sidebar.active {
-    margin-left: 0;
-  }
-
-  #sidebarCollapse span {
-    display: none;
-  }
-
-  .menu-item-text {
-    margin-left: 0;
-    opacity: 1;
-    transition: margin-left 0s, opacity 0.7s;
-  }
-
   .sm-hide {
     display: none !important;
   }
@@ -260,20 +242,20 @@ ul ul ul a {
     display: block !important;
   }
 }
-#sidebar:hover {
+#sidebar:hover, #sidebar.sidebar-expanded {
   max-width: 210px;
   min-width: 210px;
 }
-#sidebar:hover .menu-item-text {
+#sidebar:hover .menu-item-text, #sidebar.sidebar-expanded .menu-item-text {
   margin-left: 0;
   opacity: 1;
   transition: margin-left 0s, opacity 0.7s;
   transition-delay: 0.2s;
 }
-#sidebar:hover a {
+#sidebar:hover a, #sidebar.sidebar-expanded a {
   pointer-events: auto;
 }
-#sidebar:hover .close-menu {
+#sidebar:hover .close-menu, #sidebar.sidebar-expanded .close-menu {
   text-align: right;
 }
 
@@ -299,7 +281,7 @@ ul ul ul a {
 }
 
 .navbar-title {
-  margin-left: 8px;
+  margin-left: 0px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -351,32 +333,13 @@ ul ul ul a {
   direction: rtl;
 }
 
-/* ---------------------------------------------------
-    CARDS
------------------------------------------------------ */
-.card-custom {
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.card-A, .card-B, .card-C, .card-D {
-  min-height: 250px;
-  padding: 5px;
-}
-
-.scrollx {
-  overflow-x: auto;
-}
-
 .form-group {
   margin-bottom: 6px;
 }
 
 /* --- sticky sidebar */
 .sidebar {
-  will-change: min-height;
+  will-change: min-height, width, max-width, min-width;
 }
 
 .sidebar__inner {
@@ -386,6 +349,7 @@ ul ul ul a {
   will-change: position, transform;
 }
 
+/* --- sticky sidebar */
 .grid-custom {
   width: 100%;
   display: grid;
@@ -402,20 +366,57 @@ ul ul ul a {
   align-self: center;
 }
 
-.close-menu {
-  width: 100%;
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 4px;
+.sidebar-close-btn {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 30px;
+  text-align: right;
+  padding-top: 3px;
+  padding-bottom: 0px;
 }
 
-.close-menu:hover {
-  color: #ffdf00;
+.sidebar-close-btn:hover {
   background-color: #4b4b4b;
+  color: #ffdf00;
+}
+
+.btn-custom {
+  background-color: #ffdf00;
+  color: #4b4b4b;
+}
+
+.btn-custom:hover {
+  background-color: #4b4b4b;
+  color: #ffdf00;
+}
+
+.modal-header-custom {
+  background-color: #eaeaea;
+  font-weight: lighter;
+}
+
+.modal-btn-custom {
+  background-color: #eaeaea;
+  font-weight: lighter;
+}
+
+/* ---------------------------------------------------
+    CARDS
+----------------------------------------------------- */
+.card-custom {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-A, .card-B, .card-C, .card-D {
+  min-height: 250px;
+  padding: 5px;
+  height: 100%;
+}
+
+.card-D-outer {
+  flex: 1;
+  overflow-x: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -29,7 +29,6 @@ $navbar-height: 50px;
 $footer-height: 25px;
 $sidebar-width: 210px;
 $sidebar-icon-only-width: 50px;
-;
 
 .bg-main-color {
   background-color: $main-color;
@@ -104,10 +103,10 @@ a:focus {
     min-width: $sidebar-width;
     max-width: $sidebar-width;
     color: $main-color-secondary;
-    transition: all 0.3s;
+    transition: 0s;
 }
 
-#sidebar.active {
+#sidebar.sidebar-hidden {
     margin-left: $sidebar-width * -1;
     min-width: $sidebar-width;
 }
@@ -239,12 +238,15 @@ ul ul ul a {
     padding-bottom: $contentPadding + $footer-height;
     padding-top: $contentPadding;
 
-    min-height: 100vh;
+    min-height: calc(100vh - #{$navbar-height});
     transition: all 0.3s;
 
     position: relative; /*for footer-custom*/
 
     background-color: $content-bg-color;
+
+    display:flex;
+    flex-direction:column;
 }
 
 /* ---------------------------------------------------
@@ -278,7 +280,7 @@ ul ul ul a {
       transition: margin-left 0s, opacity 0.7s;
     }
     #sidebar {
-      overflow: hidden;
+      // overflow: hidden;
       max-width: $sidebar-icon-only-width;
       min-width: $sidebar-icon-only-width;
       a {
@@ -293,21 +295,23 @@ ul ul ul a {
 // }
 
 @media (max-width: 768px) {
-    #sidebar {
-        margin-left: $sidebar-width * -1;
-        min-width: $sidebar-width;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-    .menu-item-text {
-      margin-left: 0;
-      opacity: 1;
-      transition: margin-left 0s, opacity 0.7s;
-    }
+    // #sidebar {
+    //     margin-left: $sidebar-icon-only-width * -1;
+    //     // min-width: $sidebar-width;
+    // }
+    // #sidebar.sidebar-hidden {
+    //     margin-left: 0;
+    // }
+    // #sidebarCollapse span {
+    //     display: none;
+    // }
+    // // .menu-item-text {
+    // //   margin-left: 0;
+    // //   opacity: 1;
+    // //   transition: margin-left 0s, opacity 0.7s;
+    // // }
+    // ;
+
     .sm-hide {
       display: none !important;
     }
@@ -316,7 +320,7 @@ ul ul ul a {
     }
 }
 
-#sidebar:hover {
+#sidebar:hover, #sidebar.sidebar-expanded {
   .menu-item-text {
     margin-left: 0;
     opacity: 1;
@@ -357,7 +361,8 @@ ul ul ul a {
 }
 
 .navbar-title {
-  margin-left: 8px;
+  margin-left: 0px;
+  ;
   margin-top: 5px;
   margin-bottom: 5px;
   span {
@@ -415,33 +420,13 @@ ul ul ul a {
   direction: rtl;
 }
 
-/* ---------------------------------------------------
-    CARDS
------------------------------------------------------ */
-
-.card-custom {
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.card-A, .card-B, .card-C, .card-D {
-  min-height: 250px;
-  padding: 5px;
-}
-
-.scrollx {
-  overflow-x: auto;
-}
-
 .form-group {
   margin-bottom: 6px;
 }
 
 /* --- sticky sidebar */
 .sidebar{
-    will-change: min-height;
+    will-change: min-height, width, max-width, min-width;
 }
 
 .sidebar__inner{
@@ -449,6 +434,7 @@ ul ul ul a {
     transform: translate3d(0, 0, 0);
     will-change: position, transform;
 }
+/* --- sticky sidebar */
 
 .grid-custom {
   width: 100%;
@@ -466,20 +452,57 @@ ul ul ul a {
   align-self: center;
 }
 
-.close-menu {
-
-  width: 100%;
-
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 4px;
-  cursor: pointer;
-
-  color: $main-color-level-3;
-  background-color: $main-color-level-2;
-  height: 30px;
+.sidebar-close-btn {
+    cursor: pointer;
+    text-align: right;
+    padding-top: 3px;
+    padding-bottom: 0px;
 }
-.close-menu:hover {
-  color: $main-color;
+.sidebar-close-btn:hover {
   background-color: $main-color-secondary;
+  color: $main-color;
+}
+
+.btn-custom {
+  background-color: $main-color;
+  color: $main-color-secondary;
+}
+.btn-custom:hover {
+  background-color: $main-color-secondary;
+  color: $main-color;
+}
+
+
+.modal-header-custom {
+  background-color: $content-bg-color;
+  font-weight: lighter;
+}
+.modal-btn-custom {
+  background-color: $content-bg-color;
+  font-weight: lighter;
+}
+
+
+
+/* ---------------------------------------------------
+    CARDS
+----------------------------------------------------- */
+
+.card-custom {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-A, .card-B, .card-C, .card-D {
+  min-height: 250px;
+  padding: 5px;
+  height: 100%;
+}
+
+
+.card-D-outer {
+  flex: 1;
+  overflow-x: auto;
 }
