@@ -332,9 +332,6 @@ ul ul ul a {
   a {
     pointer-events: auto;
   }
-  .close-menu {
-    text-align: right;
-  }
 }
 
 /* ---------------------------------------------------
@@ -457,6 +454,7 @@ ul ul ul a {
     text-align: right;
     padding-top: 3px;
     padding-bottom: 0px;
+
 }
 .sidebar-close-btn:hover {
   background-color: $main-color-secondary;
@@ -480,6 +478,7 @@ ul ul ul a {
 .modal-btn-custom {
   background-color: $content-bg-color;
   font-weight: lighter;
+  font-size: 85%;
 }
 
 

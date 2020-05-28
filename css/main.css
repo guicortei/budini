@@ -255,9 +255,6 @@ ul ul ul a {
 #sidebar:hover a, #sidebar.sidebar-expanded a {
   pointer-events: auto;
 }
-#sidebar:hover .close-menu, #sidebar.sidebar-expanded .close-menu {
-  text-align: right;
-}
 
 /* ---------------------------------------------------
     OTHER CLASSES
@@ -396,6 +393,7 @@ ul ul ul a {
 .modal-btn-custom {
   background-color: #eaeaea;
   font-weight: lighter;
+  font-size: 85%;
 }
 
 /* ---------------------------------------------------
