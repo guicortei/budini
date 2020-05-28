@@ -229,10 +229,6 @@ ul ul ul a {
   pointer-events: none;
 }
 
-/*.navbar-logo-div {
-  max-width: $sidebar-icon-only-width;
-  overflow: hidden;
-}*/
 @media (max-width: 768px) {
   .sm-hide {
     display: none !important;
